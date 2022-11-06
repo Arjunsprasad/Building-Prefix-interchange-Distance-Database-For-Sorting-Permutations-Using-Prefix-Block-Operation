@@ -15,29 +15,6 @@ The problem is known to be NP-hard in general , but for some of operations, it c
 
 A permutation is an ordering/arrangement of elements in a set. For example, consider a set S = {1,2,3}. The permutations are 123,132,213,231,312,321. For a set containing n elements there are n! permutations. For example, the set S contains 3 elements and 3! = 6 permutations are there. We denote a permutation by the symbol π. And a permutation along with the elements are generally represented as π = π1 π2 π3 π4.... πi... πin where i is the index/position in the permutation.
 
-#### Prefix block Interchange operation
-Consider a permutation π = 43251, a prefix block is a sub-permutation containing the first element of the permutation. The following examples shows the prefixes of the permutation π.
-
-a. **4**3251
-
-b. **43**251
-
-c. **432**51
-
-d. **4325**1
-
-e. **43251**
-
-The following examples show some blocks that are not prefixes.
-
-a. 4**3**251
-
-b. 4**325**1
-
-c. 43**25**1
-
-d. 43**251**
-
 A prefix block interchange operation interchanges two blocks in a permutation in which one block is a prefix block. The following examples show someprefix block interchange operation.
 
 ![image](https://user-images.githubusercontent.com/72243394/200158015-f95a8411-6674-4383-a77b-5dd0378cb7fd.png)
