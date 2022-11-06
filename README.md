@@ -69,8 +69,11 @@ In the field of interconnection network design: the so-called prefix block inter
 The first approximation algorithm to solve SBT (SORTING BY TRANSPOSITIONS)was devised in 1998 by Bafna and Pevzer , with a 1.5 ratio, based on the properties of a structure called the cycle graph. In 2006, Elias and Hartman presented a 1.375-approximation algorithm (EH algorithm) with time complexity O(n2)O(n2), the best known approximation solution so far for SBT. In 2012, Bulteau, Fertin and Rusu demonstrated that SBT is NPNP- hard.In a later study, the time complexity of the EH algorithm was improved to O(nlogn)O(nlogn) byCunha et al. Improvements to the EH algorithm, including heuristics, were proposed by Dias and Dias.
 
 ### Known Algorithm
+
 ![image](https://user-images.githubusercontent.com/72243394/200158386-df8b50fa-a3c6-4210-9fb1-807a3a2d32ee.png)
+
 ### Various Approaches
+
 ![image](https://user-images.githubusercontent.com/72243394/200158428-ed9c0de2-332f-420b-b6c1-d94b861bd50c.png)
 
 The problem is known to be NP-hard in general and W-hard when parameterised by the length of a solution , but some families of operations that are important in applications lead to problems that can be solved in polynomial time (e.g. exchanges , block-interchanges and signed reversals ), while other families yield hard problems that admit good approximations (e.g. 11/8 for reversals and for block-transpositions ). Write known results. Who proposed these problems. Which are the known algorithms,various approaches etc.
@@ -86,25 +89,45 @@ In Third approach, there is a function which will automatically creates moves fo
 
 ## Implementation and Analysis
 First Approach was using Recursive function, manually typed moves were applied. Recursion is the method of solving a computational problem where the solution depends on solutions to smaller instances of the same problem. Recursion solves such recursive problems by using functions that call themselves from within their own code. Here, In our approach we have written different functions which are manually written moves for each permutation of lengths 2,3,4 and 5. Then, these moves were applied recursively. A part of algorithm is given below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158585-de6b5360-2df0-4049-b0e7-554d45e9c8be.png)
+
 The result for this type of implementation was limited,because we have written moves as functions manually. So, we have got the sorting sequences from length 2 to 5. The table which shows the data after implementation is shown below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158614-e4d93bb4-2604-4206-87d5-84c9cd59b84f.png)
+
 Second approach was using tree data structure. Tree is a non-linear data structure because it does notstore in a sequential manner. It is a hierarchical structure as elements in a Tree are arranged in multiple levels. In tree data structure, the topmost node is called a root node. Each node contains some data, and data can be of any type. Here moves were generated using a special function and implemented using a nested for loop. The Algorithm is given below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158660-b88e021d-1083-401d-bae8-69f0f8d54887.png)
+
 For applying the generated moves, a separate function is designed. This function slices the string i.e., permutation using the moves and replaces the block and finally the resultant permutation will be returned. The algorithm for this function is mentioned below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158673-73d658e4-b5fb-4563-8bc6-d43324ef13ea.png)
+
 The main part of the implementation comes under the function named tree. Through the theory and application, we know that the maximum depth will be half the length of permutation. So, maximum depth will be assigned as n/2. And for each moves, it will apply moves using the function applymoves. Then in each depths,sorting will be checked and suppose sorting happens then it will be appended to the respective list. Here also this function is a recursive function. After 6 steps of checking Depth will be incremented and checks it is less than or equal to the condition where maximum depth is n/2. Then again it invokes its own function. The algorithm for the tree function is mentioned below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158708-5c4033aa-8c79-44c6-81ae-a5eaa6f5ac7f.png)
+
 The result of this approach comes to an end with the shortest distance to sort permutation of length up to 6. The result is shown below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158723-e977b9e7-aa50-4c78-88e5-7b18ac8ccea5.png)
-Third approach was using graph data structure. Graph is a non-linear data structure consisting of nodes and edges. The nodes are some times also reffered to as vertices and the edges are lines or arcs that connect any two nodes in the graph. Here, In this implementation, we had implemented using NetworkX package of Python. It has so many built-in functions to solve the various problems related to graph. Here, nodes are permutation and edges or vertices are the moves. Here moves were generated using a special function and implemented using a nested for loop. The Algorithm is given below
+
+Third approach was using graph data structure. Graph is a non-linear data structure consisting of nodes and edges. The nodes are some times also reffered to as vertices and the edges are lines or arcs that connect any two nodes in the graph. Here, In this implementation, we had implemented using NetworkX package of Python. It has so many built-in functions to solve the various problems related to graph. Here, nodes are permutation and edges or vertices are the moves. Here moves were generated using a special function and implemented using a nested for loop. The Algorithm is given below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158747-6b96339a-c83a-4bf9-99f5-132b28f49620.png)
+
 For applying the generated moves, a separate function is designed. This function slices the string i.e., permutation using the moves and replaces the block andfinally the resultant permutation will be added as an ege in the graph. The algorithm for this function is mentioned below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158765-2ac86c99-6b09-4bdc-b69e-3389e87f9236.png)
+
 The main part of the implementation comes under the function named graphfunction. Through the theory and application, we know that the maximum depth will be half the length of permutation. So, maximum depth will be assigned as n/2. And for each moves, it will apply moves using the function applymoves. Then checks depth with maximum depth and if it is true recursively the function calls itself. The algorithm for the tree function is mentioned below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158801-5cbf082d-d478-40ce-a13b-409a7c5c524f.png)
+
 The result of this approach comes to an end with the shortest distance to sort permutation of length up to 7. After 7 it takes more than 10 hours time to get the result. The result is shown below:
+
 ![image](https://user-images.githubusercontent.com/72243394/200158834-9f3b5188-e46c-47aa-b767-4f3b0b61e679.png)
+
 ## Conclusion
 We initiated in this work the study of sorting permutations by prefix block-interchanges, an operation that generalises several well-studied operations in genome rearrangements and interconnection network design. through the three implementations we got same results.
 
